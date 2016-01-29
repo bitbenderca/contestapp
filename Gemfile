@@ -3,8 +3,15 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
+# To prepare the files to be hosted on Heroku
+group :production do
+	gem "rails_12factor"
+	gem "pg"
+end
 # Use sqlite3 as the database for Active Record
+group :development, :test do
 gem 'sqlite3'
+end
 # Use SCSS for stylesheets
 #gem 'sass'
 gem 'sass-rails', '~> 4.0.3'
