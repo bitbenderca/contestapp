@@ -10,7 +10,24 @@ group :production do
 end
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-gem 'sqlite3'
+  gem 'sqlite3'
+	# Helpful gems
+	gem "better_errors" #improves error handling
+	gem "binding_of_caller" #used by better errors
+	
+	# Testing frameworks
+	gem 'rspec-rails' # testing framework
+	gem "factory_girl_rails" # use factories, not fixtures
+	gem "capybara" # simulate brewser activity
+	gem "fakeweb"
+	
+	# Automated testing
+	gem 'guard' # automated execution of test suite upon change
+	gem "guard-rspec" # guart integration with rspec
+	
+	# Only install the rb-fsevent gem if on MaC OSX
+	#gem 'rb-fesvent'# used for Growl notifications
+	
 end
 # Use SCSS for stylesheets
 #gem 'sass'
